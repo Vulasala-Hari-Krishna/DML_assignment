@@ -1,0 +1,31 @@
+{% csrf_token %} 
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Like and Dislike</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/main.js' %}" data-csrf-token="{{ csrf_token }}""></script>   
+</head>
+<body>
+    <div class="container">
+        <div class="page-header text-center">
+            <h1>Like and Dislike Page</h1>
+        </div>
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <h2 id="like-count">{{like_count}}</h2>
+                <button type="button" class="btn btn-lg btn-primary" id="like">Like</button>
+            </div>
+            <div style="display: inline-block;">
+                <h2 id="dislike-count">{{dislike_count}}</h2>
+                <button type="button" class="btn btn-lg btn-primary" id="dislike">Dislike</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
